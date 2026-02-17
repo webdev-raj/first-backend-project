@@ -7,12 +7,7 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-          <Route path='/' element={
-            <div className="home-container">
-              <h1>First Backend Project</h1>
-              <button onClick={() => window.location.href = '/create-post'}>Create Post</button>
-            </div>
-          } />
+          <Route path='/' element={<Feed />} />
           <Route path='/create-post' element={<CreatePost />}/>
           <Route path='/feed' element={<Feed />} />
         </Routes>
