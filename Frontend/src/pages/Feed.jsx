@@ -27,6 +27,19 @@ const Feed = () => {
         <div key={post._id} className="post">
           <img src={post.imageUrl} alt="Post" className="post-image" />
           <p>{post.caption}</p>
+          <div>
+            <button className="delete-button" onClick={() => {
+              axios.delete(`http://localhost:3000/delete-post/${post._id}`)
+                .then(res => {
+                  fetchFeedData(); // Refresh feed data after deletion
+                })
+                .catch(err => {
+                  console.error("Error deleting post:", err);
+                });
+            }}>
+              Delete
+            </button>
+          </div>
         </div>
       ))}
     </div>
