@@ -24,7 +24,7 @@ const Feed = () => {
   }, []);
   return (
     <div className="feed-container">
-      <header>
+      <header className="feed-header">
         <h1>Feed</h1>
         <button className="create-post-button" onClick={() => navigate("/create-post")}>Create Post</button>
       </header>
